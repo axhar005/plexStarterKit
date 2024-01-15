@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 #files variable
 DOCKERCONFDIR="$HOME/.config/appdata"
 PSK_DIR=$DOCKERCONFDIR/psk
@@ -18,13 +17,13 @@ PLEX_IP=$(eval echo $(grep 'PLEX_IP=' $PSK_DIR/.env | cut -d '=' -f2))
 if [ "$1" = "-help" ] || [ "$1" = "help" ]; then
 	cat $PSK_DIR/.help
 elif [ "$1" = "start" ]; then
-	echo "plexStarterKit start"
+	echo "psk: start"
 	docker compose -f $PSK_DIR up -d
 elif [ "$1" = "stop" ]; then
-	echo "plexStarterKit stop"
+	echo "psk: stop"
 	docker compose -f $PSK_DIR down
 elif [ "$1" = "restart" ]; then
-	echo "plexStarterKit restart"
+	echo "psk: restart"
 	docker compose -f $PSK_DIR down && docker compose -f $PSK_DIR up -d
 elif [ "$1" = "env" ]; then
 	# read -e -p "Docker configuration directory (default: $HOME/.config/appdata): " DOCKERCONFDIR
@@ -54,7 +53,7 @@ elif [ "$1" = "env" ]; then
 
 elif [ "$1" = "init-storage" ]; then
 	if [ -z "$DOCKERCONFDIR" ] || [ -z "$DOCKERSTORAGEDIR" ] || [ -z "$VPN_USER" ] || [ -z "$VPN_PASS" ] || [ -z "$PLEX_CLAIM" ] || [ -z "$PLEX_IP" ]; then
-		echo "env variables missing"
+		echo "psk: env variables missing"
 		exit 1
 	fi
 
@@ -84,6 +83,9 @@ elif [ "$1" = "init-config" ]; then
 
 elif [ "$1" = "status" ]; then
 	docker ps
+
+elif [ "$1" = "update" ]; then
+	git pull
 
 elif [ "$1" = "unistall" ]; then
 	sudo rm -rf '/usr/local/bin/psk'

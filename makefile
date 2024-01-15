@@ -2,9 +2,12 @@
 DOCKERCONFDIR="$(HOME)/.config/appdata"
 
 all:
+	@sh install.sh
+
+header:
 	@cat .header
 
-dependencies:
+dependencies: check-install
 	@sudo apt update
 	@sudo chmod +x psk.sh
 	@sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
@@ -18,6 +21,13 @@ dependencies:
 	@sudo usermod -aG docker $(USER)
 	@newgrp docker
 
+check-install:
+	@read -p "Storage directory (y / n): " DOINSTALL; \
+	if [ "$$DOINSTALL" != "y" ]; then \
+		echo "psk: the answer is not y, abort"; \
+		exit 1; \
+	fi;
+
 setup:
 	@mkdir -p $(DOCKERCONFDIR)
 	@mkdir -p $(DOCKERCONFDIR)/psk
@@ -25,9 +35,10 @@ setup:
 	@sudo cp psk.sh /usr/local/bin/psk
 
 env:
-	bash psk env
+	@psk env
 
 files:
+	@psk env
 
 
 .PHONY: all
