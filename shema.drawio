@@ -1,81 +1,102 @@
 <mxfile host="65bd71144e">
     <diagram id="EB3Mban17w3uWTQxKdQv" name="Page-1">
-        <mxGraphModel dx="540" dy="467" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="10000" pageHeight="10000" math="0" shadow="0">
+        <mxGraphModel dx="736" dy="548" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="10000" pageHeight="10000" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="6" style="edgeStyle=none;html=1;" edge="1" parent="1" source="4" target="5">
+                <mxCell id="6" style="edgeStyle=none;html=1;" parent="1" source="4" target="5" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="4" value="MakeFile for install plex docker compose" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="4" value="MakeFile for install plex docker compose" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="970" y="360" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="8" style="edgeStyle=none;html=1;" edge="1" parent="1" source="5" target="7">
+                <mxCell id="8" style="edgeStyle=none;html=1;" parent="1" source="5" target="7" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="5" value="install docker compose laste version and&amp;nbsp;dependencies" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="5" value="install docker compose laste version and&amp;nbsp;dependencies" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="970" y="460" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="10" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="7" target="9">
+                <mxCell id="10" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="7" target="9" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="7" value="fill .env in terminal" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="7" value="fill .env in terminal" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="970" y="560" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="11" style="edgeStyle=none;html=1;" edge="1" parent="1" source="9" target="12">
+                <mxCell id="11" style="edgeStyle=none;html=1;" parent="1" source="9" target="12" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="1120" y="690" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="19" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="9" target="18">
+                <mxCell id="19" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="9" target="18" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="25" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="12" target="24">
+                <mxCell id="25" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="12" target="24" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="12" value="give permission to the storage folder" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="12" value="give permission to the storage folder" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="1150" y="760" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="21" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="14" target="15">
+                <mxCell id="21" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="14" target="15" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="14" value="run docker compose" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="14" value="run docker compose" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="970" y="870" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="15" value="copy api key and all container config like sonarr / radarr" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="15" value="copy api key and all container config like sonarr / radarr" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="970" y="990" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="20" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=none;" edge="1" parent="1" source="9" target="14">
+                <mxCell id="20" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=none;" parent="1" source="9" target="14" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="1030" y="860" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="28" style="edgeStyle=none;html=1;fontSize=15;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="18" target="23">
+                <mxCell id="28" style="edgeStyle=none;html=1;fontSize=15;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="18" target="23" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="18" value="export COMPOSE_FILE" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="18" value="export COMPOSE_FILE" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="970" y="660" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="23" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;set command:&lt;/font&gt;&lt;br&gt;psk help = print help info&lt;br&gt;psk env = make env&lt;br&gt;psk run = compose up -d&lt;br&gt;psk stop = compose down&lt;br&gt;psk retart = compose down &amp;amp;&amp;amp; up&lt;br&gt;" style="whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                <mxCell id="23" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;set command:&lt;/font&gt;&lt;br&gt;psk help = print help info&lt;br&gt;psk env = make env&lt;br&gt;psk run = compose up -d&lt;br&gt;psk stop = compose down&lt;br&gt;psk retart = compose down &amp;amp;&amp;amp; up&lt;br&gt;" style="whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
                     <mxGeometry x="1160" y="640" width="240" height="100" as="geometry"/>
                 </mxCell>
-                <mxCell id="24" value="set folder in sonarr / radarr and overseer" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="24" value="set folder in sonarr / radarr and overseer" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="1330" y="760" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="27" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=30;" edge="1" parent="1" source="26" target="4">
+                <mxCell id="27" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=30;" parent="1" source="26" target="4" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="26" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;PlexStarterKit&lt;/span&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="26" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;PlexStarterKit&lt;/span&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="875" y="260" width="310" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="29" value="" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;" edge="1" parent="1" source="18" target="9">
+                <mxCell id="29" value="" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;" parent="1" source="18" target="9" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="1030" y="870" as="targetPoint"/>
                         <mxPoint x="1030" y="720" as="sourcePoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="9" value="create config file and storage file" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="9" value="create config file and storage file" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="970" y="760" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" style="edgeStyle=none;html=1;fontSize=15;fontColor=#FFFFFF;" edge="1" parent="1" source="31" target="32">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;PlexStarterKit&lt;/font&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="2550" y="280" width="320" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontSize=15;fontColor=#FFFFFF;" edge="1" parent="1" source="32" target="36">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="&lt;div style=&quot;background-color: rgb(31, 31, 31); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; line-height: 18px;&quot;&gt;&lt;font style=&quot;font-size: 15px;&quot; color=&quot;#ffffff&quot;&gt;dependencies&lt;/font&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;fontSize=30;" vertex="1" parent="1">
+                    <mxGeometry x="2650" y="410" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;env&lt;/font&gt;" style="whiteSpace=wrap;html=1;fontSize=15;fontColor=#FFFFFF;" vertex="1" parent="1">
+                    <mxGeometry x="2650" y="630" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=15;fontColor=#FFFFFF;" edge="1" parent="1" source="36" target="33">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="config files&lt;br&gt;all path export&lt;br&gt;cp all in configfile" style="whiteSpace=wrap;html=1;fontSize=15;fontColor=#FFFFFF;" vertex="1" parent="1">
+                    <mxGeometry x="2650" y="520" width="120" height="60" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
