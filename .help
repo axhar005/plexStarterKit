@@ -1,12 +1,15 @@
 plexStartKit:
-use: psk [command]
+use: psk [command] [element]
 commands:
-    help or -help   #show all commands
-    status          #show docker status
-    start           #run docker containers
-    stop            #stop docker containers
-    restart         #stop and start docker containers
-    env             #setup the env variables
-    init-storage    #create all storage files
-    update          #update plexStarterKit and depen
-    unistall        #unistall psk command and folde 
+    help, -help, -h     #show all commands
+    show                #show a element
+            env             #show env
+            storage         #show storage path
+    status, ps          #show docker status
+    run, up, -r         #run docker containers
+    stop, down, -s      #stop docker containers
+    restart             #stop and start docker containers
+    env                 #setup the env variables
+    storage             #create all storage files
+    update              #update plexStarterKit and depen
+    unistall            #unistall psk command and folde

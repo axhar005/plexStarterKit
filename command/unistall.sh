@@ -4,7 +4,7 @@ CONFIG_DIR="$HOME/.config/appdata"
 PSK_DIR="$CONFIG_DIR/psk"
 STORAGE_DIR=$(eval echo $(grep 'STORAGE_DIR=' $PSK_DIR/.env | cut -d '=' -f2))
 
-echo "unistaling..."
+echo "[ UNISTALL ]"
 sudo rm -rf '/usr/local/bin/psk'
 sudo rm -rf $PSK_DIR
 read -e -p "do you want to delete the storage folder? (y/n): " INPUT

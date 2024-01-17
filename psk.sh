@@ -12,16 +12,16 @@ PLEX_IP=$(eval echo $(grep 'PLEX_IP=' $PSK_DIR/.env | cut -d '=' -f2))
 
 #main
 # HELP
-if [ "$1" = "-help" ] || [ "$1" = "help" ]; then
+if [ "$1" = "help" ] || [ "$1" = "-help" ] || [ "$1" = "-h" ]; then
 	cat $PSK_DIR/.help
 
 # START
-elif [ "$1" = "start" ]; then
+elif [ "$1" = "run" ] || [ "$1" = "up" ] || [ "$1" = "-r" ]; then
 	echo "psk: start"
 	docker compose -f $PSK_DIR/docker-compose.yml up -d
 
 # STOP
-elif [ "$1" = "stop" ]; then
+elif [ "$1" = "stop" ] || [ "$1" = "down" ] || [ "$1" = "-s" ]; then
 	echo "psk: stop"
 	docker compose -f $PSK_DIR/docker-compose.yml down
 
@@ -35,15 +35,19 @@ elif [ "$1" = "env" ]; then
 	bash $COMMAND_DIR/env.sh setup
 
 # STORAGE
-elif [ "$1" = "init-storage" ]; then
+elif [ "$1" = "storage" ]; then
 	bash "$COMMAND_DIR/storage.sh"
 
 # VPN
-elif [ "$1" = "init-vpn" ]; then
+elif [ "$1" = "vpn" ]; then
 	bash "$COMMAND_DIR/env.sh vpn"
 
+# SHOW
+elif [ "$1" = "show" ] || [ "$1" = "-s" ]; then
+	bash "$COMMAND_DIR/show.sh" "$2"
+
 # STATUS
-elif [ "$1" = "status" ]; then
+elif [ "$1" = "status" ] || [ "$1" = "ps" ]; then
 	docker ps
 
 # UPDATE
