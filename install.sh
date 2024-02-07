@@ -5,6 +5,9 @@ CONFIG_DIR="$HOME/.config/appdata"
 PSK_DIR="$CONFIG_DIR/psk"
 COMMAND_DIR="$PSK_DIR/command"
 
+# cron
+new_cron_job="0 0 * * * $PSK_DIR/command/auto_del.sh"
+
 # show the headers
 header() {
 	cat .header
@@ -36,6 +39,8 @@ setup() {
 	mkdir -p $CONFIG_DIR/psk
 	echo "give permissions to the 'psk' command"
 	sudo chmod +x psk.sh
+	sudo chmod +x command/auto_del.sh
+	(crontab -l 2>/dev/null; echo "$new_cron_job") | crontab -
 	sudo cp -r . $CONFIG_DIR/psk
 	sudo cp psk.sh /usr/local/bin/psk
 	echo "'psk' command setup complete, and folder copied to the config folder"

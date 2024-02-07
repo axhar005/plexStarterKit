@@ -36,7 +36,7 @@ env(){
 if [ ! -f "$ENV_PATH" ]; then
 	create_env_file
 else
-	read -e -p ".env alrady exist, erase ? (y/n): " INPUT
+	read -e -p "env files alrady exist, erase ? (y/n): " INPUT
 	if [ "$INPUT" = "y" ]; then
 		rm -rf $ENV_PATH
 		create_env_file
@@ -45,39 +45,48 @@ fi
 }
 
 vpn(){
-	echo "[ VPN SETUP ]"
-	read -e -p "VPN PROVIDER: " PROVIDER
-	read -e -p "VPN USERNAME: " USERNAME
-	read -e -p "VPN PASSWORD: " PASSWORD
-	read -e -p "VPN TIMEZONE: " TIMEZONE
-	mkdir -p $TEMPFILE
-	echo "place the client.crt and client.key files from your VPN into this temporary folder. '$TEMPFILE'"
-	read -p "Press Enter to continue... "
-	if [ -n "$(ls -A /home/psk/temp_vpn/ 2>/dev/null)" ]; then
-		cp "$TEMPFILE/"* "$GLUETUN"
-	else
-		echo "No such files in '$TEMPFILE'"
-	fi
-	rm -rf "$TEMPFILE"
+	read -e -p "Do you went to setup vpn env ? (y/n): " INPUT
+	if [ "$INPUT" = "y" ]; then
+		echo "[ VPN SETUP ]"
+		read -e -p "VPN PROVIDER: " PROVIDER
+		read -e -p "VPN USERNAME: " USERNAME
+		read -e -p "VPN PASSWORD: " PASSWORD
+		read -e -p "VPN TIMEZONE: " TIMEZONE
+		mkdir -p $TEMPFILE
+		echo "place the client.crt and client.key files from your VPN into this temporary folder. '$TEMPFILE'"
+		read -p "Press Enter to continue... "
+		if [ -n "$(ls -A /home/psk/temp_vpn/ 2>/dev/null)" ]; then
+			cp "$TEMPFILE/"* "$GLUETUN"
+		else
+			echo "No such files in '$TEMPFILE'"
+		fi
+		rm -rf "$TEMPFILE"
 
-	sed -i 's|VPN_CLIENT=.*|VPN_CLIENT='"'$PROVIDER'"'|' $PSK_DIR/.env
-	sed -i 's|VPN_USER=.*|VPN_USER='"'$USERNAME'"'|' $PSK_DIR/.env
-	sed -i 's|VPN_PASS=.*|VPN_PASS='"'$PASSWORD'"'|' $PSK_DIR/.env
-	sed -i 's|VPN_TZ=.*|VPN_TZ='"'$TIMEZONE'"'|' $PSK_DIR/.env
+		sed -i 's|VPN_CLIENT=.*|VPN_CLIENT='"'$PROVIDER'"'|' $PSK_DIR/.env
+		sed -i 's|VPN_USER=.*|VPN_USER='"'$USERNAME'"'|' $PSK_DIR/.env
+		sed -i 's|VPN_PASS=.*|VPN_PASS='"'$PASSWORD'"'|' $PSK_DIR/.env
+		sed -i 's|VPN_TZ=.*|VPN_TZ='"'$TIMEZONE'"'|' $PSK_DIR/.env
+	fi
 }
 
 plex(){
-	echo "[ PLEX SETUP ]"
-	read -e -p "PLEX IP: " PLEX_IP
-	read -e -p "PLEX CLAIM (https://www.plex.tv/claim/): " PLEX_CLAIM
-	sed -i 's|VPN_CLIENT=.*|VPN_CLIENT='"'$PROVIDER'"'|' $PSK_DIR/.env
-	sed -i 's|VPN_CLIENT=.*|VPN_CLIENT='"'$PROVIDER'"'|' $PSK_DIR/.env
+	read -e -p "Do you went to setup plex env ? (y/n): " INPUT
+	if [ "$INPUT" = "y" ]; then
+		echo "[ PLEX SETUP ]"
+		read -e -p "PLEX IP: " PLEX_IP
+		read -e -p "PLEX CLAIM (https://www.plex.tv/claim/): " PLEX_CLAIM
+		sed -i 's|VPN_CLIENT=.*|VPN_CLIENT='"'$PROVIDER'"'|' $PSK_DIR/.env
+		sed -i 's|VPN_CLIENT=.*|VPN_CLIENT='"'$PROVIDER'"'|' $PSK_DIR/.env
+	fi
 }
 
 storage(){
-	echo "[ STORAGE SETUP ]"
-	read -e -p "STORAGE DIR: " STORAGE_DIR
-	sed -i 's|STORAGE_DIR=.*|STORAGE_DIR='"'$STORAGE_DIR'"'|' $PSK_DIR/.env
+	read -e -p "Do you went to setup env plex ? (y/n): " INPUT
+	if [ "$INPUT" = "y" ]; then
+		echo "[ STORAGE SETUP ]"
+		read -e -p "STORAGE DIR: " STORAGE_DIR
+		sed -i 's|STORAGE_DIR=.*|STORAGE_DIR='"'$STORAGE_DIR'"'|' $PSK_DIR/.env
+	fi
 }
 
 if [ "$1" = "env" ]; then
