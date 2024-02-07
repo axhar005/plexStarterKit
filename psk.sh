@@ -44,7 +44,11 @@ elif [ "$1" = "vpn" ]; then
 
 # SHOW
 elif [ "$1" = "show" ] || [ "$1" = "-s" ]; then
-	bash "$COMMAND_DIR/show.sh" "$2"
+	if [ "$2" = "" ]; then
+		cat $PSK_DIR/.help
+	else
+		bash "$COMMAND_DIR/show.sh" "$2"
+	fi
 
 # STATUS
 elif [ "$1" = "status" ] || [ "$1" = "ps" ]; then
@@ -59,5 +63,5 @@ elif [ "$1" = "unistall" ]; then
 	bash $COMMAND_DIR/unistall.sh
 
 else
-	echo "unknow commande $1"
+	cat $PSK_DIR/.help
 fi

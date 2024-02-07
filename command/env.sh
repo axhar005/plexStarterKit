@@ -81,7 +81,7 @@ plex(){
 }
 
 storage(){
-	read -e -p "Do you went to setup env plex ? (y/n): " INPUT
+	read -e -p "Do you went to setup env storage ? (y/n): " INPUT
 	if [ "$INPUT" = "y" ]; then
 		echo "[ STORAGE SETUP ]"
 		read -e -p "STORAGE DIR: " STORAGE_DIR
