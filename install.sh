@@ -62,3 +62,4 @@ dependencies
 setup
 env
 storage
+bash $PSK_DIR/psk.sh help
