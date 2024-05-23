@@ -15,7 +15,7 @@ header() {
 
 # dependencies
 dependencies() {
-	read -p "install dependencies ? (y/n): " DOINSTALL
+	read -p "install dependencies ? (y/N): " DOINSTALL
 	if [ "$DOINSTALL" != "y" ]; then
 		echo "the dependencies will not be installed"
 	else
@@ -37,6 +37,7 @@ dependencies() {
 setup() {
 	mkdir -p $CONFIG_DIR
 	mkdir -p $CONFIG_DIR/psk
+	mkdir -p $CONFIG_DIR/logs
 	echo "give permissions to the 'psk' command"
 	sudo chmod +x psk.sh
 	sudo chmod +x command/auto_del.sh

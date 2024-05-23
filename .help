@@ -5,6 +5,8 @@ commands:
     show                #show a element
             env             #show env
             storage         #show storage path
+    edit, -e            #edit element
+            env             #edit .env file
     status, ps          #show docker status
     run, up, -r         #run docker containers
     stop, down, -s      #stop docker containers

@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   plex:
     container_name: plex
@@ -23,6 +21,8 @@ services:
       - ${CONFIG_DIR}/plex:/config
       - ${CONFIG_DIR}/plex:/transcode
       - ${STORAGE_DIR}:/storage
+    devices:
+      - /dev/bus/usb:/dev/bus/usb
     restart: ${RESTART}
 
   overseerr:
@@ -84,6 +84,11 @@ services:
       bind:
         create_host_path: true
     - type: bind
+      source: ${STORAGE_DIR}/downloads
+      target: /downloads
+      bind:
+        create_host_path: true
+    - type: bind
       source: ${CONFIG_DIR}/radarr
       target: /config
       bind:
@@ -116,6 +121,11 @@ services:
       bind:
         create_host_path: true
     - type: bind
+      source: ${STORAGE_DIR}/downloads
+      target: /downloads
+      bind:
+        create_host_path: true
+    - type: bind
       source: ${CONFIG_DIR}/sonarr
       target: /config
       bind:
@@ -141,8 +151,9 @@ services:
     network_mode: "service:gluetun"
     restart: ${RESTART}
     volumes:
-    - ${CONFIG_DIR}/transmission:/config
-    - ${STORAGE_DIR}/downloads:/downloads
+      - ${CONFIG_DIR}/transmission:/config
+      - ${STORAGE_DIR}/downloads:/downloads
+
 
   portainer:
     container_name: portainer

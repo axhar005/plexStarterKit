@@ -50,6 +50,12 @@ elif [ "$1" = "show" ] || [ "$1" = "-s" ]; then
 		bash "$COMMAND_DIR/show.sh" "$2"
 	fi
 
+# SHOW
+elif [ "$1" = "edit" ] || [ "$1" = "-e" ]; then
+	if [ "$2" = "env" ]; then
+		nano -m $PSK_DIR/.env
+	fi
+
 # STATUS
 elif [ "$1" = "status" ] || [ "$1" = "ps" ]; then
 	docker ps
