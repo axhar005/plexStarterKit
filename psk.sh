@@ -50,7 +50,7 @@ elif [ "$1" = "show" ] || [ "$1" = "-s" ]; then
 		bash "$COMMAND_DIR/show.sh" "$2"
 	fi
 
-# SHOW
+# EDIT
 elif [ "$1" = "edit" ] || [ "$1" = "-e" ]; then
 	if [ "$2" = "env" ]; then
 		nano -m $PSK_DIR/.env
@@ -62,7 +62,8 @@ elif [ "$1" = "status" ] || [ "$1" = "ps" ]; then
 
 # UPDATE
 elif [ "$1" = "update" ]; then
-	git pull
+	(cd "$PSK_DIR" && git pull)
+	bash $COMMAND_DIR/update_psk.sh
 
 #UNISTALL
 elif [ "$1" = "unistall" ]; then
