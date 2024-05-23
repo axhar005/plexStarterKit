@@ -69,7 +69,7 @@ elif [ "$1" = "status" ] || [ "$1" = "ps" ]; then
 # UPDATE
 elif [ "$1" = "update" ]; then
 	echo "> psk execute $1"
-	(cd "$PSK_DIR" && git pull)
+	(cd "$PSK_DIR" && git config --global --add safe.directory "$PSK_DIR" && git pull)
 	bash $COMMAND_DIR/update_psk.sh
 
 #UNISTALL
