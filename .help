@@ -1,6 +1,5 @@
-plexStartKit:
 use: psk [command] [element]
-commands:
+
 help, -help, -h     #show all commands
 
 show                    #show a element

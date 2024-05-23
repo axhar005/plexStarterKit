@@ -14,6 +14,7 @@ PLEX_IP=$(eval echo $(grep 'PLEX_IP=' $PSK_DIR/.env | cut -d '=' -f2))
 # HELP
 if [ "$1" = "help" ] || [ "$1" = "-help" ] || [ "$1" = "-h" ]; then
 	echo "> psk execute $1"
+	cat .header
 	cat $PSK_DIR/.help
 
 # START
@@ -78,5 +79,6 @@ elif [ "$1" = "unistall" ]; then
 	bash $COMMAND_DIR/unistall.sh
 
 else
+	cat .header
 	cat $PSK_DIR/.help
 fi
