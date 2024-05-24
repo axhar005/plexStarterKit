@@ -1,7 +1,7 @@
 
 use: psk [command] [element]
 
-help, -help, -h     #show all commands
+help, -help, -h         #show all commands
 
 show                    #show a element
         env                     #show env
