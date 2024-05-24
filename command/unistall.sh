@@ -11,6 +11,6 @@ read -e -p "do you want to delete the storage folder? (y/N): " INPUT
 if [ "$INPUT" = "y" ]; then
 	read -e -p "Are you sure ? because this will delete all related data. (y/N): " INPUT
 	if [  "$INPUT" = "y" ]; then
-		sudo rm -rf $STORAGE_DIR
+		sudo docker compose down && sudo rm -rf $STORAGE_DIR
 	fi
 fi
