@@ -1,6 +1,7 @@
 #!/bin/bash
 
 CONFIG_DIR="$HOME/.config/appdata"
+PSK_DIR=$CONFIG_DIR/psk
 LOG_FILE="$CONFIG_DIR/logs/psk.log"
 TARGET="/usr/local/bin/psk"
 
@@ -13,11 +14,11 @@ log_message() {
 
 # Vérifier si le fichier cible existe
 if [ -f "$TARGET" ]; then
-	sudo cp ../psk.sh "$TARGET"
+	sudo cp PSK_DIR=$CONFIG_DIR/psk/psk.sh "$TARGET"
 	log_message "File replaced at $TARGET"
 	echo "File has been replaced at $TARGET"
 else
-	sudo cp ../psk.sh "$TARGET"
+	sudo cp PSK_DIR=$CONFIG_DIR/psk/psk.sh "$TARGET"
 	log_message "File created at $TARGET"
 	echo "File has been created at $TARGET"
 fi
